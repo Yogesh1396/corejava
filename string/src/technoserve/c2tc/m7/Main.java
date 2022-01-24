@@ -1,20 +1,29 @@
 package technoserve.c2tc.m7;
 
 import java.util.Scanner;
-
-public class Main {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class Main
+{
+	public static void main(String args[])
+	{
+		int c;
+		String str;
 		Scanner sc = new Scanner(System.in);
-       String A = sc.next();
-       String B = sc.next();
-       
-      System.out.println(A.length()+ B.length());
-      System.out.println(A.compareTo(B)>0?"Yes":"No");
-
-      System.out.println(A.substring(0, 1).toUpperCase()+A.substring(1, A.length())+" "+B.substring(0, 1).toUpperCase()+B.substring(1, B.length()));
-
+		System.out.println("Enter the string : ");
+		str=sc.nextLine();
+		char a[]=str.toCharArray();
+		for(c=0;c<a.length;c++)
+			{
+				if(a[c]>='A' && a[c]<='Z')
+					{
+						a[c]=(char)((int)a[c]+32);
+					}
+				else if(a[c]>='a' && a[c]<='z')
+					{
+						a[c]=(char)((int)a[c]-32);
+					}
+			}
+		System.out.println("String after characters are toggled : ");
+		for(c=0;c<a.length;c++)
+			System.out.print(a[c]);
 	}
-
 }
